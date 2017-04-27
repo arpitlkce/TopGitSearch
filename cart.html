@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Top Git</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.css">
+   <link rel="stylesheet" href="css/main.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+	<script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
+	<script src="main.js"></script>
+    </head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><i class="fa fa-github"></i><span class="headerSpan"><span class="topGit">Top Git </span> - <span class="gitdetails"> Finding the best github Projects</span></a>
+    </div>
+    <div class="resultdetails">
+      <div > We have found <strong>{{myWelcome.total_count}}</strong> respository results in <strong>{{searchedItem}}</strong> </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<div class="row">
+<form class="navbar-form navbar-left" role="search">
+    <div class="form-group col-sm-10 col-xs-4">
+<input type="search" class="form-control autocomplete" ng-model="searchedItem" typeahead="lang for lang in languages | filter:$viewValue">
+  <span id="searchclear" class="glyphicon glyphicon-remove-circle" ng-click = "clearSearch()"></span>
+    </div>
+    <button type="submit" ng-click="search();" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+</form>
+
+
+</div>
+<hr>
+<div class="row equal" ng-show="myData != null">
+  
+  <div class="col-xs-5 col-sm-8" >
+    <table>
+  <tr ng-repeat="x in myData.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | orderBy : 'full_name'">
+    <td>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-xs-1 col-sm-1">
+					<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+				</div>
+				<div class="col-xs-8 col-sm-11">
+					<div class="fullName">{{ x.full_name }}</div>
+					<div><span><strong>Language</strong> : {{x.language}}</span> |  <label class="description">{{x.description}}</label>
+					<div><a href="{{x.html_url}}" target="_blank">Git Url</a></div>
+				</div>
+			</div>
+		</div>
+	</td>
+  </tr>
+</table>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+
+  </div>
+  
+  <div class="col-xs-4 col-sm-4">
+  
+    <div class="panel panel-default">
+	<div class="panel-body">
+  <article>
+   <div class="stars"><span><i class="fa fa-database" aria-hidden="true"></i></span>Rating</div>
+   <div>{{header[keys[1]]}} out of {{header[keys[0]]}}</div>
+  </article>
+  </div>
+  </div> 
+  
+  
+  <div class="panel panel-default">
+	<div class="panel-body">
+  <article>
+   <div class="stars"><span><i class="fa fa-star" aria-hidden="true"></i></span>Stars</div>
+    <rzslider data-rz-slider-model="rangeSlider.value" rz-slider-options="rangeSlider.options" ></rzslider>
+   <button type="submit" ng-click="search();" class="btn btn-default pull-right">Apply</button>
+
+  </article>
+  </div>
+  </div> 
+  
+
+  
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<script>
+
+
+</script>
+</body>
+</html>

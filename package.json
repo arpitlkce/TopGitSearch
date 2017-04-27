@@ -1,0 +1,15 @@
+{
+  "name": "topgitsearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run":"http-server"
+  },
+  "author": "arpitlkce <arpitlkce@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

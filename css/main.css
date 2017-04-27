@@ -1,0 +1,76 @@
+.container{
+		border: 2px solid #0080ff;
+		border-radius: 5px;
+		width: 850px;
+	}
+	.fa-angle-double-right {
+		font-size: 45px;
+		color: #0080ff;
+	}
+	.fullName {
+		    font-size: 20px;
+			color: #cabfbf;
+	}
+	.headerSpan{
+		vertical-align: super;
+		margin-left: 10px;
+	}
+	.fa-github{
+		font-size: 42px;
+		color: #0080ff;
+	}
+	.navbar-brand {
+		padding:5px 5px;
+	}
+	.resultdetails {
+		border: 2px solid #0080ff;
+		float: right;
+		margin: 8px;
+		padding: 5px;
+		border-radius: 15px;
+	}
+	.stars {
+		text-align: center;
+		border: 1px solid #0080ff;
+		border-radius: 5px;
+		color: #0080ff;
+	}
+	.stars span {
+		float: left;
+		padding-left: 5px;
+	}
+	.btn-default:hover {
+		background-color:#0080ff;
+		color:white;
+	}
+	.stars + div {
+		text-align:center;
+	}
+	.topGit {
+		font-size: 25px;
+	}
+	.description {
+		display:inline;
+		font: -webkit-control;
+	}
+	#searchclear {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+	padding-right:10px;
+}
+	@media only screen and (max-width: 430px) {
+    .gitdetails {
+        font-size: 12px;
+    }
+	.pagination-sm li > a { 
+		font-size:8px;
+	}
+}
+
